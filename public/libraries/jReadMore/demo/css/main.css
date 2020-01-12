@@ -1,0 +1,14 @@
+body {
+    font-family: Roboto Slab, Cambria, serif;
+    text-align: justify;
+    color:#fff;
+    background-color:#634D40;
+}
+
+.read-more {
+    margin-bottom: 10px;
+}
+.read-more__link {
+    font-weight: bold;
+    cursor: pointer;
+}
