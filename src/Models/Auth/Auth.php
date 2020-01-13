@@ -7,16 +7,16 @@ use App\Utils\Funcs;
 
 class Auth{
 
-    public function login(string $email, string $password): ?User
+    public function login(string $email, string $password): ?Person
     {
 
         $query = new QueryBuilder();
         $query
-            ->from('users')
+            ->from('persons')
             ->where('email = :email')
             ->setParam('email', $email);
 
-        $user = $query->fetchObj(User::class);
+        $user = $query->fetchObj(Person::class);
   
         // return $user;
 
@@ -24,7 +24,7 @@ class Auth{
             return null;
         }
 
-        if(password_verify($password, $user->password)){
+        if(password_verify($password, $user->password) && $user->active == 1){
             $_SESSION['auth'] = $user->user_id;
             return $user;
         }
@@ -39,7 +39,7 @@ class Auth{
         Funcs::redirect('/');
     }
 
-    public function user(): ?User
+    public function user(): ?Person
     {
         $id = $_SESSION['auth'] ?? null;
 
@@ -53,12 +53,12 @@ class Auth{
             ->where('id = :id')
             ->setParam('id', $id);
 
-        $user = $query->fetchObj(User::class);
+        $user = $query->fetchObj(Person::class);
 
         return $user ?: null;
     }
 
-    public static function getAuth(): ?User
+    public static function getAuth(): ?Person
     {
         return self::user();
     }

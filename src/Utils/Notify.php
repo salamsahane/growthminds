@@ -11,7 +11,7 @@ class Notify{
 
     public static function danger(string $message): string
     {
-        return self::content('danger', $message);
+        return self::content('error', $message);
     }
 
     public static function warning(string $message): string

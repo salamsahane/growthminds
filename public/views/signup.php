@@ -43,9 +43,32 @@ if(isset($_POST['signup'])){
             $today = date('Y-m-d');
 
             $signup = Register::register(['first_name', 'last_name', 'email', 'gender', 'profil', 'password', 'avatar', 'creation_date'], [$first_name, $last_name, $email, $gender, 'Prospect', $password_hash, '/assets/images/avatars/default.png', $today]);
-            dd($signup);
-            die();
-            Notify::success("Signup successful");
+            
+            if($signup){
+
+                $to = $email;
+                $subject = WEBSITE_NAME . " - ACCOUNT ACTIVATION";
+                $token = sha1($first_name.$email);
+                
+                ob_start();
+                require(MAILS . 'activation.mail.php');
+                $content = ob_get_clean();
+                
+                $headers = "From:info@growthminds.com \r\n";
+                $headers .= 'MINE-Version: 1.0' . "\r\n";
+                $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+                $sendMail = mail($to, $subject, $content, $headers);
+                
+                if($sendMail){
+                    Notify::success("Signup successful, Activation Mails send");
+                    Funcs::redirect('/');
+                }else{
+                    $form::saveInputData();
+                    $form::setError("Erreur souvenu lors de l'envoi de mail");   
+                }
+
+            }
 
         }else{
             $form::saveInputData();

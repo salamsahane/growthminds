@@ -29,4 +29,13 @@ class homeController extends Controller{
         $this->view->render();
     }
 
+    public function activation(int $id, string $token)
+    {
+        $this->view('activation', 'Account Activation', [
+            'id' => $id,
+            'token' => $token
+        ]);
+        $this->view->render();
+    }
+
 }

@@ -2,7 +2,7 @@
 
 namespace App\Models\Auth;
 
-class User{
+class Person{
 
     public $user_id;
     public $name;
