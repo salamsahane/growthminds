@@ -18,10 +18,3 @@ define("MAILS", ROOT . 'public' . DIRECTORY_SEPARATOR . 'mails' . DIRECTORY_SEPA
 require('../vendor/autoload.php');
 
 new \App\Core\App;
-
-// $router = new Router(__DIR__ . '/views');
-// $router
-//     ->get('/', 'home', 'home')
-//     ->get('/Home', 'home', 'Home')
-//     ->get('/login', 'login', 'login')
-//     ->run();

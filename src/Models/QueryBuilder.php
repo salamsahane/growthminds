@@ -45,9 +45,14 @@ class QueryBuilder extends Model
         return $this;
     }
 
-    public function setParam(string $key,  $value): self
+    public function setParam(?string $key,  $value): self
     {
-        $this->params[$key] = $value;
+        if(is_null($key)){
+            $this->params[] = $value;
+        }else{
+            $this->params[$key] = $value;
+        }
+
         return $this;
     }
 
@@ -215,9 +220,13 @@ class QueryBuilder extends Model
 
     public function updateTable(): bool
     {
-        $query = Model::getDB()->prepare($this->toSQLUpdate());
-        $execute = $query->execute($this->params);
-        return $execute;
+        try{
+            $query = Model::getDB()->prepare($this->toSQLUpdate());
+            $execute = $query->execute($this->params);
+            return $execute;
+        }catch(Exception $e){
+            die("error:" . $this->toSQLUpdate() . " - " . $e->getMessage());
+        }
     }
 
 }

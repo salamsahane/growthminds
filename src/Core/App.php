@@ -29,11 +29,14 @@ class App{
         if(class_exists($controller)){
             //Set the Class
             $this->controller = new $controller;
-            if(method_exists($this->controller, $this->action)){
-                call_user_func_array([$this->controller, $this->action], $this->params);
+            $action = str_replace('-', '', $this->action);
+            if(method_exists($this->controller, $action)){
+                call_user_func_array([$this->controller, $action], $this->params);
             }else{
                 $this->controller->errorPage();
             }
+        }else{
+            $this->controller->errorPage();
         }
 
     }

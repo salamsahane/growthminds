@@ -25,8 +25,10 @@ class Auth{
         }
 
         if(password_verify($password, $user->password) && $user->active == 1){
-            $_SESSION['auth'] = $user->user_id;
+            $_SESSION['auth'] = $user->person_id;
             return $user;
+        }else{
+
         }
 
         return null;
@@ -39,7 +41,7 @@ class Auth{
         Funcs::redirect('/');
     }
 
-    public function user(): ?Person
+    public function person(): ?Person
     {
         $id = $_SESSION['auth'] ?? null;
 
@@ -49,9 +51,9 @@ class Auth{
 
         $query = new QueryBuilder();
         $query
-            ->from('users')
-            ->where('id = :id')
-            ->setParam('id', $id);
+            ->from('persons')
+            ->where('person_id = :person_id')
+            ->setParam('person_id', $id);
 
         $user = $query->fetchObj(Person::class);
 
@@ -60,7 +62,7 @@ class Auth{
 
     public static function getAuth(): ?Person
     {
-        return self::user();
+        return self::person();
     }
 
 }

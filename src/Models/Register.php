@@ -5,7 +5,7 @@ use App\Core\Model;
 
 class Register{
 
-    public static function register(array $fields, array $params)
+    public static function register(array $fields, array $params): bool
     {
         $query = new QueryBuilder;
         $query

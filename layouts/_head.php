@@ -47,19 +47,19 @@ use App\Utils\Funcs;
                         </a>
                     </li> -->
                     <li class="d-none d-sm-flex nav-item">
-                        <a href="/home/logout" class="btn btn-accent">Logout</a>
+                        <a href="/account/logout" class="btn btn-accent">Logout</a>
                     </li>
                 </ul>
             <?php else: ?>
                 <ul class="nav navbar-nav ml-auto flex-nowrap" style="white-space: nowrap;">
                     <li class="ml-16pt nav-item">
-                        <a href="/home/login" class="nav-link">
+                        <a href="/account/login" class="nav-link">
                             <i class="material-icons">lock_open</i>
                             <span class="sr-only">Login</span>
                         </a>
                     </li>
                     <li class="d-none d-sm-flex nav-item">
-                        <a href="/home/signup" class="btn btn-accent">Join Us</a>
+                        <a href="/account/signup" class="btn btn-accent">Join Us</a>
                     </li>
                 </ul>
             <?php endif ?>

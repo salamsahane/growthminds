@@ -1,9 +1,9 @@
 <?php
 
-use App\Utils\Form;
 use App\Models\Auth\Auth;
 use App\Utils\{
     Filter,
+    Form,
     Funcs,
     Notify   
 };
@@ -20,7 +20,7 @@ if(isset($_POST['login'])){
         extract($_POST);
 
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $form::setError("E-mail Invalide");
+            $form::setError("E-mail Invalid");
         }
 
         if($form::isValid()){
@@ -33,7 +33,7 @@ if(isset($_POST['login'])){
             if(!is_null($user)){
 
                 Notify::success('Authentification Successful');
-                Funcs::redirect('/');
+                Funcs::redirect('/account/profile/' . $user->person_id);
 
             }else{
                 $form::saveInputData();

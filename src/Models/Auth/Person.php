@@ -4,10 +4,16 @@ namespace App\Models\Auth;
 
 class Person{
 
-    public $user_id;
-    public $name;
+    public $person_id;
+    public $first_name;
+    public $last_name;
     public $email;
+    public $gender;
+    public $profil;
     public $password;
-    public $created_at;
+    public $avatar;
+    public $active;
+    public $status;
+    public $creation_date;
 
 }

@@ -20,11 +20,11 @@
         <div class="col s12 m4 offset-m4">
             <div class="card z-depth-2">
                 <div class="card-content grey-text text-darken-1">
-                    <span class="card-title blue-text text-darken-2">Activation de Compte</span>
-                    <p>Hello <?= $first_name ?>! <br/> To activate your account, click on the link below:</p>
+                    <span class="card-title blue-text text-darken-2">Reset Password</span>
+                    <p>Hello ! <br/> To reset your password, click on the link below:</p>
                 </div>
                 <div class="card-action blue darken-2">
-                    <a href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'account' . DIRECTORY_SEPARATOR . 'activation' . DIRECTORY_SEPARATOR . App\Core\Model::getDB()->lastInsertId() . DIRECTORY_SEPARATOR . $token ?>" class="waves-effect waves-light btn-large white blue-text text-darken-2">Activate Account</a>
+                    <a href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'account' . DIRECTORY_SEPARATOR . 'new-password' . DIRECTORY_SEPARATOR . $data . DIRECTORY_SEPARATOR . $token ?>" class="waves-effect waves-light btn-large white blue-text text-darken-2">Reset my password</a>
                 </div>
             </div>
         </div>

@@ -1,10 +1,9 @@
 <?php
 
-use App\Utils\Form;
-use App\Models\Auth\Auth;
 use App\Models\Register;
 use App\Utils\{
     Filter,
+    Form,
     Funcs,
     Notify   
 };
@@ -62,10 +61,10 @@ if(isset($_POST['signup'])){
                 
                 if($sendMail){
                     Notify::success("Signup successful, Activation Mails send");
-                    Funcs::redirect('/');
+                    Funcs::redirect('/account/login');
                 }else{
                     $form::saveInputData();
-                    $form::setError("Erreur souvenu lors de l'envoi de mail");   
+                    $form::setError("An error occur during the mail sending");   
                 }
 
             }

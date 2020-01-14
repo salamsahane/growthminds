@@ -3,6 +3,7 @@
 namespace App\Core;
 
 use App\Models\Database\Database;
+use App\Models\QueryBuilder;
 
 class Model{
 
@@ -20,6 +21,19 @@ class Model{
             self::$db = $db::setDB();
         }
         return self::$db;
+    }
+
+    public static function find(string $field, string $table, string $condition, string $param): ?string
+    {
+        $query = new QueryBuilder;
+        $query
+            ->select($field)
+            ->from($table)
+            ->where($condition . " = ?")
+            ->setParam(null, $param);
+        $result = $query->fetch($field);
+
+        return $result;
     }
 
 }
