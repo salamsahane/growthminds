@@ -27,7 +27,7 @@ if(isset($this->view_data['id']) && isset($this->view_data['token'])){
 
             if($result){
                 Notify::success("Account Activated");
-                Funcs::redirect("/home/login");
+                Funcs::redirect("/account/login");
             }
         }else{
             Notify::danger("Invalid Parameter");

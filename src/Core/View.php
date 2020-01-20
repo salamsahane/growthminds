@@ -30,14 +30,20 @@ class View
     /**
      * Render the view of the action called
      */
-    public function render()
+    public function render(?string $root = null)
     {
-        if(file_exists(VIEW . $this->view_file . '.php')){
+        $view = ($root != null) ? VIEW . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR .$this->view_file . '.php' : VIEW . $this->view_file . '.php';
+        if(file_exists($view)){
             ob_start();
-            require(VIEW . $this->view_file . '.php');
+            require($view);
             $content = ob_get_clean();
             $title = $this->view_title;
-            require(ROOT . 'layouts' . DIRECTORY_SEPARATOR . 'template.php');
+            if(is_null($root)):
+                require(ROOT . 'layouts' . DIRECTORY_SEPARATOR . 'template.php');
+            else:
+                require(ROOT . 'layouts' . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'template.php');
+            endif;
+
         }
     }
 

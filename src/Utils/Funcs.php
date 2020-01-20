@@ -12,7 +12,7 @@ class Funcs{
         exit;
     }
 
-    public static function is_logged_in()
+    public static function is_logged_in(): bool
     {
         $user = Auth::getAuth();
         if($user !== null){

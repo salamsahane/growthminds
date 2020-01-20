@@ -41,7 +41,7 @@ if(isset($_POST['signup'])){
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
             $today = date('Y-m-d');
 
-            $signup = Register::register(['first_name', 'last_name', 'email', 'gender', 'profil', 'password', 'avatar', 'creation_date'], [$first_name, $last_name, $email, $gender, 'Prospect', $password_hash, '/assets/images/avatars/default.png', $today]);
+            $signup = Register::register(['first_name', 'last_name', 'email', 'gender', 'profil', 'password', 'avatar', 'creation_date'], [$first_name, $last_name, $email, $gender, 'Prospect', $password_hash, '/assets/images/avatars/avatar.png', $today]);
             
             if($signup){
 

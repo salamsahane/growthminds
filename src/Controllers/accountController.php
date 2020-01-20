@@ -53,4 +53,12 @@ class accountController extends Controller{
         $this->view->render();
     }
 
+    public function prospectprofile(int $id)
+    {
+        $this->view('prospect-profile', 'Profile', [
+            'id' => $id
+        ]);
+        $this->view->render();
+    }
+
 }

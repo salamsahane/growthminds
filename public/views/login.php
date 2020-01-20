@@ -33,7 +33,7 @@ if(isset($_POST['login'])){
             if(!is_null($user)){
 
                 Notify::success('Authentification Successful');
-                Funcs::redirect('/account/profile/' . $user->person_id);
+                Funcs::redirect('/account/' . strtolower($user->profil) . '-profile/' . $user->person_id);
 
             }else{
                 $form::saveInputData();
