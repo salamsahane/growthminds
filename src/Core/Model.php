@@ -4,6 +4,7 @@ namespace App\Core;
 
 use App\Models\Database\Database;
 use App\Models\QueryBuilder;
+use App\Models\Auth\Person;
 
 class Model{
 
@@ -33,6 +34,17 @@ class Model{
             ->setParam(null, $param);
         $result = $query->fetch($field);
 
+        return $result;
+    }
+
+    public static function getAll(string $table, string $condition, string $param){
+        $query = new QueryBuilder;
+        $query
+            ->from($table)
+            ->where($condition)
+            ->setParam(null, $param);
+
+        $result = $query->fetchAll();
         return $result;
     }
 

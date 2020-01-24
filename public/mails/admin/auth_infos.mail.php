@@ -21,10 +21,10 @@
             <div class="card z-depth-2">
                 <div class="card-content grey-text text-darken-1">
                     <span class="card-title blue-text text-darken-2">Activation de Compte</span>
-                    <p>Hello <?= $first_name ?>! <br/> To activate your account, click on the link below:</p>
+                    <p>Hello <?= $person['first_name'] ?>! <br/> Your account has been activates successfully. <br/>To access the platform, use the password below with your email address.</p>
                 </div>
                 <div class="card-action blue darken-2">
-                    <a href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'account' . DIRECTORY_SEPARATOR . 'activation' . DIRECTORY_SEPARATOR .  App\Core\Model::getDB()->lastInsertId() . DIRECTORY_SEPARATOR . $token ?>" class="waves-effect waves-light btn-large white blue-text text-darken-2">Activate Account</a>
+                    <p>Your password: <?= $password ?></p>
                 </div>
             </div>
         </div>

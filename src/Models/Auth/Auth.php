@@ -34,11 +34,19 @@ class Auth{
         return null;
     }
 
-    public static function logout()
+    public function adminLogin(string $email, string $password): ?Person{
+        $person = $this->login($email, $password);
+        if(is_null($person) || $person->profil != 'admin'){
+            return null;
+        }
+        return $person;
+    }
+
+    public static function logout(string $path)
     {
         session_destroy();
         $_SESSION = [];
-        Funcs::redirect('/');
+        Funcs::redirect($path);
     }
 
     public function person(): ?Person

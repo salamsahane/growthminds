@@ -2,4 +2,4 @@
 
 use App\Models\Auth\Auth;
 
-Auth::logout();
+Auth::logout('/');

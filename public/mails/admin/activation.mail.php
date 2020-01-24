@@ -24,7 +24,7 @@
                     <p>Hello <?= $first_name ?>! <br/> To activate your account, click on the link below:</p>
                 </div>
                 <div class="card-action blue darken-2">
-                    <a href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'account' . DIRECTORY_SEPARATOR . 'activation' . DIRECTORY_SEPARATOR .  App\Core\Model::getDB()->lastInsertId() . DIRECTORY_SEPARATOR . $token ?>" class="waves-effect waves-light btn-large white blue-text text-darken-2">Activate Account</a>
+                    <a href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'account' . DIRECTORY_SEPARATOR . 'activation' . DIRECTORY_SEPARATOR .  App\Core\Model::getDB()->lastInsertId() . DIRECTORY_SEPARATOR . $token ?>" class="waves-effect waves-light btn-large white blue-text text-darken-2">Activate Account</a>
                 </div>
             </div>
         </div>

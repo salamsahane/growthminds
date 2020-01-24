@@ -55,7 +55,7 @@ class App{
             if($url[0] == 'admin'){
                 $this->controller = isset($url[1]) ? $url[1] . 'Controller' : 'homeController';
                 $this->action = $url[2] ?? 'index';
-                unset($url[1], $url[2]);
+                unset($url[0], $url[1], $url[2]);
                 $this->params = !empty($url) ? array_values($url) : [];
                 return $this->root = 'admin';
             }else{

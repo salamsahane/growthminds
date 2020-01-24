@@ -5,13 +5,13 @@ use App\Core\Model;
 
 class Register{
 
-    public static function register(array $fields, array $params): bool
+    public static function register(string $table, array $fields, string $values, array $params): bool
     {
         $query = new QueryBuilder;
         $query
-            ->insertInTo('persons')
+            ->insertInTo($table)
             ->fields($fields)
-            ->values('?,?,?,?,?,?,?,?')
+            ->values($values)
             ->params($params);
 
         $q = $query->insert();

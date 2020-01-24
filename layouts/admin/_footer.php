@@ -4,6 +4,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="/assets/js/admin/main.js"></script>
+    <script src="/assets/js/profilePicture.js"></script>
+    <script src="/assets/js/admin/admin.js"></script>
 
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
@@ -22,6 +24,22 @@
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
     <script src="/assets/js/admin/init/fullcalendar-init.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.7.0/dist/sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
+    <!-- AlertifyJS -->
+    <!-- <script src="/libraries/AlertifyJS/build/alertify.min.js"></!-->
+    <script src="<?= DIRECTORY_SEPARATOR .'libraries' . DIRECTORY_SEPARATOR . 'AlertifyJS' . DIRECTORY_SEPARATOR .  'build' . DIRECTORY_SEPARATOR . 'alertify.min.js'?>"></script>
+
+
+    <?php
+        if(isset($_SESSION['alertify'])){
+            echo $_SESSION['alertify'];
+            unset($_SESSION['alertify']);
+        }
+    ?>
 
     <!--Local Stuff-->
     <script>

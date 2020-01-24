@@ -17,10 +17,4 @@ define("MAILS", ROOT . 'public' . DIRECTORY_SEPARATOR . 'mails' . DIRECTORY_SEPA
 
 require('../vendor/autoload.php');
 
-// if($_SERVER['REQUEST_URI'] == '/admin'){
-//     echo "Admin";
-// }else{
-//     echo "Local Account";
-// }
-
 new \App\Core\App;

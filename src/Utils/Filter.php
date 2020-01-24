@@ -3,17 +3,25 @@ namespace App\Utils;
 
 class Filter{
 
-    public static function auth()
+    public static function auth(?string $root = null)
     {
         if(isset($_SESSION['auth']) && !is_null($_SESSION['auth'])){
-            Funcs::redirect('/');
+            if(is_null($root)){
+                Funcs::redirect('/');
+            }else{
+                Funcs::redirect('/admin');
+            }
         }
     } 
 
-    public static function guest()
+    public static function guest(?string $root = null)
     {
         if(!isset($_SESSION['auth']) && is_null($_SESSION['auth'])){
-            Funcs::redirect('login');
+            if(is_null($root)){
+                Funcs::redirect('login');
+            }else{
+                Funcs::redirect('/admin/account/login');
+            }
         }
     } 
 

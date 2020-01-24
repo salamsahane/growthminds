@@ -131,7 +131,7 @@ class QueryBuilder extends Model
     {
         $query = Model::getDB()->prepare($this->toSQL());
         $query->execute($this->params);
-        return $query->fetchAll()[0] ?? null;
+        return $query->fetchAll() ?? null;
     }
 
     public function fetchObj(String $class)
@@ -227,6 +227,29 @@ class QueryBuilder extends Model
         }catch(Exception $e){
             die("error:" . $this->toSQLUpdate() . " - " . $e->getMessage());
         }
+    }
+
+    //Delete QueryBuilder
+    public function delete(string $table): self
+    {
+        $this->table = $table;
+        return $this;
+    }
+
+    public function toSQLDelete(): string
+    {
+        $sql = "DELETE FROM $this->table";
+        if($this->where){
+            $sql .= " WHERE " . $this->where;
+        }
+        return $sql;
+    }
+
+    public function deleteRecord(): bool
+    {
+        $query = Model::getDB()->prepare($this->toSQLDelete());
+        $execute = $query->execute($this->params);
+        return $execute;
     }
 
 }

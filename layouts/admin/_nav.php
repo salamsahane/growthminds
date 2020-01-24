@@ -2,8 +2,8 @@
 <header id="header" class="header">
     <div class="top-left">
         <div class="navbar-header">
-            <a class="navbar-brand" href="./"><img src="/assets/images/admin/logo.png" alt="Logo"></a>
-            <a class="navbar-brand hidden" href="./"><img src="/assets/images/admin/logo2.png" alt="Logo"></a>
+            <a class="navbar-brand" href="/admin"><img src="/assets/images/admin/logo.png" alt="Logo"></a>
+            <a class="navbar-brand hidden" href="/admin"><img src="/assets/images/admin/logo2.png" alt="Logo"></a>
             <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
         </div>
     </div>
@@ -88,18 +88,14 @@
             <div class="user-area dropdown float-right">
                 <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
-                    <img class="user-avatar rounded-circle" src="/assets/images/admin/admin.jpg" alt="User Avatar">
+                    <img class="user-avatar rounded-circle" src="<?= $person->avatar ?>" alt="User Avatar">
                 </a>
 
-                <div class="user-menu dropdown-menu">
-                    <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-
-                    <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span
-                            class="count">13</span></a>
-
-                    <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
-
-                    <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                <div class="user-menu   dropdown-menu">
+                    <span class="nav-link"><i class="fa fa-user"></i><?= $person->first_name ?></span>
+                    <a class="nav-link" href="/admin/account/edit-account/<?= $person->person_id ?>"><i class="fa fa-edit"></i>Edit Account</a>
+                    <hr>
+                    <a class="nav-link" href="/admin/account/logout"><i class="fa fa-power-off"></i>Logout</a>
                 </div>
             </div>
 
