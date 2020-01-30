@@ -46,6 +46,10 @@
         jQuery(document).ready(function($) {
             "use strict";
 
+            $('[data-toggle="popover"]').popover({
+                html: true
+            })
+
             // Pie chart flotPie1
             var piedata = [
                 { label: "Desktop visits", data: [[1,32]], color: '#5c6bc0'},

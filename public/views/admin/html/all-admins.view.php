@@ -26,7 +26,7 @@ require('../layouts/admin/_left-panel.php'); ?>
                                         <div class="card-text text-sm-center">
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?= $admin['person_id']; ?>">More Infos</button>
                                             <?php if(Funcs::is_super_admin() == true): ?>
-                                            <button class="btn btn-danger delete-admin" id="deleteAdmin" onclick="deleteAdmin(<?= $admin['person_id']; ?>)">Delete</button>
+                                            <button class="btn btn-danger delete-admin" id="deleteAdmin" onclick="deleteRecord('admin', <?= $admin['person_id']; ?>)">Delete</button>
                                             <?php endif; ?>
                                         </div>
                                         <?php endif ?>

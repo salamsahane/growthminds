@@ -2,6 +2,7 @@
 namespace App\Utils;
 
 use App\Models\Auth\Auth;
+use App\Models\QueryBuilder;
 use \DateTime;
 
 class Funcs{
@@ -50,6 +51,15 @@ class Funcs{
 
         $interval = $start_time->diff($end_time);
         return $interval->format('%H');
+    }
+
+    public static function setOptions(string $table, string $option, string $value): void
+    {
+        $query = (new QueryBuilder)->from($table);
+        $results = $query->fetchAll();
+        foreach($results as $result){
+            echo "<option value='" . $result[$value] . "'>" . $result[$option] . "</option>";
+        }
     }
 
 }
