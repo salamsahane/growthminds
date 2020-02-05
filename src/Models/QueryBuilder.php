@@ -134,12 +134,16 @@ class QueryBuilder extends Model
         return $query->fetchAll() ?? null;
     }
 
-    public function fetchObj(String $class)
+    public function fetchObj(?String $class = null)
     {
         try{
             $query = Model::getDB()->prepare($this->toSQL());
             $query->execute($this->params);
-            $result = $query->fetchObject($class);
+            if($class == null){
+                $result = $query->fetch(\PDO::FETCH_OBJ);
+            }else{
+                $result = $query->fetchObject($class);
+            }
             return $result;
         }catch(Exception $e){
             die("Error: " . $this->toSQL . $e->getMessage());

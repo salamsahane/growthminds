@@ -45,6 +45,15 @@
                         <li><i class="menu-icon fas fa-book-medical"></i><a href="/admin/course/add-course">Add course</a></li>
                     </ul>
                 </li>
+                <!-- Instructor -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false"> <i class="menu-icon fas fa-book"></i>Instructor</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fas fa-list"></i><a href="/admin/instructor/instructors">List of Instructors</a></li>
+                        <li><i class="menu-icon fas fa-book-medical"></i><a href="/admin/instructor/add-instructor">Add Instructor</a></li>
+                    </ul>
+                </li>
 
                 <li class="menu-title">Icons</li><!-- /.menu-title -->
 

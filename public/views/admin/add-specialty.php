@@ -27,8 +27,12 @@ if(isset($_POST['add'])){
             $form::setError("Specialty Name too short");
         }
 
+        if(strlen($description) < 40){
+            $form::setError('Description too short');
+        }
+
         if($form::isValid()){
-            $register = Register::register('specialties', ['specialty_name', 'field_id'], '?,?', [$specialty_name, $field]);
+            $register = Register::register('specialties', ['specialty_name', 'specialty_description', 'field_id'], '?,?,?', [$specialty_name, $description, $field]);
             if($register){
                 Notify::success("Specialty added");
                 Funcs::redirect("/admin/specialty/all-specialties");

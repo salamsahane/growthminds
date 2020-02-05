@@ -37,7 +37,7 @@ class Model{
         return $result;
     }
 
-    public static function getAll(string $table, string $condition, string $param){
+    public static function getAll(string $table, string $condition, string $param): ?Array{
         $query = new QueryBuilder;
         $query
             ->from($table)
@@ -46,6 +46,15 @@ class Model{
 
         $result = $query->fetchAll();
         return $result;
+    }
+
+    public static function is_already_used(string $field, string $table, string $condition, string $param): bool
+    {
+        $result = self::find($field, $table, $condition, $param);
+        if(!$result){
+            return false;
+        }
+        return true;
     }
 
 }

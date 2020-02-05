@@ -33,7 +33,8 @@
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 
     <!-- Fontawesome -->
-    <script src="https://kit.fontawesome.com/5b053321dd.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/5b053321dd.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
 
    <style>
     #weatherWidget .currentDesc {
