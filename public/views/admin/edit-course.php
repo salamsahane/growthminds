@@ -103,14 +103,15 @@ if(!empty($this->view_data)){
                     $query = new QueryBuilder;
                     $query
                         ->update('courses')
-                        ->set("course_name = '{$course_name}', course_price = '{$course_price}', course_description = '{$description}'")
+                        ->set("course_name = '{$course_name}', course_price = '{$course_price}', course_description = :description")
                         ->where('course_id = :course_id')
-                        ->setParam('course_id', $course->course_id);
+                        ->setParam('course_id', $course->course_id)
+                        ->setParam('description', $description);
                     $update = $query->updateTable();
         
                     if($update){
                         Notify::success("Information Updated");
-                        Funcs::redirect("/admin");
+                        Funcs::redirect('/admin/course/course-infos/' . $this->view_data['course_id']);
                     }else{
                         $form_update::setError("An error has occur");
                     }
@@ -130,7 +131,7 @@ if(!empty($this->view_data)){
     
 }else{
     Notify::danger("Invalid Parameter");
-    Funcs::redirect('/admin/course/course-infos/' . $this->view_data['coure_id']);
+    Funcs::redirect('/admin/course/course-infos/' . $this->view_data['course_id']);
 }
 
 require('html/edit-course.view.php');

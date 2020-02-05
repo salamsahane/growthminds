@@ -28,7 +28,7 @@ require('../layouts/admin/_left-panel.php'); ?>
                         <div class="col-md-8">
                             <ul class="list-inline">
                                 <li class="list-inline-item"><i class="fas fa-list-alt"></i>
-                                    <?= $course->number_chapter ?> Topics</li>
+                                    <?= ($number_topics <= 1) ? $number_topics . ' Topic' : $number_topics . ' Topics' ?> / <?= $course->number_chapter ?> Topics</li>
                                 <li class="list-inline-item"><i class="fas fa-money-bill-wave"></i>
                                     <?= number_format($course->course_price) ?> FCFA</li>
                             </ul>
