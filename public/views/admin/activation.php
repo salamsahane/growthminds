@@ -10,13 +10,13 @@ if(isset($this->view_data['id']) && isset($this->view_data['token'])){
         ->from('persons')
         ->where('person_id = :person_id')
         ->setParam('person_id', $this->view_data['id']);
-    $person = $query->fetchAll();
+    $person = $query->fetchObj();
 
     if($person != null){
 
-        $token_verify = sha1($person['first_name'].$person['email']);
+        $token_verify = sha1($person->first_name.$person->email);
 
-        if($this->view_data['token'] == $token_verify && $person['active'] == 0){
+        if($this->view_data['token'] == $token_verify && $person->active == 0){
 
             //set user password
             $rand = rand(8, 12);
@@ -24,7 +24,7 @@ if(isset($this->view_data['id']) && isset($this->view_data['token'])){
             $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
             //send mail contenting login information
-            $to = $person['email'];
+            $to = $person->email;
             $subject = WEBSITE_NAME.' - AUTH INFORMATIONS';
 
             ob_start();
@@ -46,7 +46,7 @@ if(isset($this->view_data['id']) && isset($this->view_data['token'])){
                 
                 $result = $query->updateTable();
 
-                Notify::warning("Account Activated, Authentification information mail send");
+                Notify::success("Account Activated, Authentification information mail send");
                 Funcs::redirect("/admin");
             }else{
                 Notify::danger("An error has occur during the mail sending");

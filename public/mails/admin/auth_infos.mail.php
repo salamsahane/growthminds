@@ -21,7 +21,7 @@
             <div class="card z-depth-2">
                 <div class="card-content grey-text text-darken-1">
                     <span class="card-title blue-text text-darken-2">Activation de Compte</span>
-                    <p>Hello <?= $person['first_name'] ?>! <br/> Your account has been activates successfully. <br/>To access the platform, use the password below with your email address.</p>
+                    <p>Hello <?= $person->first_name ?>! <br/> Your account has been activates successfully. <br/>To access the platform, use the password below with your email address.</p>
                 </div>
                 <div class="card-action blue darken-2">
                     <p>Your password: <?= $password ?></p>

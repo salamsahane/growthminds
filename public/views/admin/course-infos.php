@@ -17,14 +17,14 @@ $person = Auth::getAuth();
 
 if(!empty($this->view_data) && isset($this->view_data['id'])){
 
-    $course = Model::find('course_name', 'courses', 'course_id', $this->view_data['id']);
-
-    if($course != null){
-        $query = (new QueryBuilder)
+    // $course = Model::find('course_name', 'courses', 'course_id', $this->view_data['id']);
+    $query = (new QueryBuilder)
                     ->from('courses')
                     ->where("course_id = :course_id")
                     ->setParam('course_id', $this->view_data['id']);
-        $course = $query->fetchObj();
+    $course = $query->fetchObj();
+    
+    if($course != null){
 
         $req = (new QueryBuilder)
                         ->from('topics')
@@ -60,6 +60,14 @@ if(!empty($this->view_data) && isset($this->view_data['id'])){
         }else{
             $form::clearInput();
         }
+
+        $instructor_id = Model::find('person_id', 'courses_assign', 'course_id', $course->course_id);
+        $q = (new QueryBuilder)
+                ->select('first_name, last_name')
+                ->from('persons')
+                ->where('person_id = :person_id')
+                ->setParam('person_id', $instructor_id);
+        $instructor = $q->fetchObj();
 
     }else{
         Notify::danger("Invalid Course");

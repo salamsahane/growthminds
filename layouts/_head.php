@@ -6,7 +6,7 @@ use App\Utils\Funcs;
     data-condenses>
     <div class="mdk-header__content">
 
-        <div class="navbar navbar-expand-sm navbar-dark bg-dark pr-0 pr-md-16pt" id="default-navbar" data-primary>
+        <div class="navbar navbar-expand-sm navbar-dark bg-gradient-red pr-0 pr-md-16pt" id="default-navbar" data-primary>
 
             <!-- Navbar toggler -->
             <button class="navbar-toggler navbar-toggler-right d-block d-md-none" type="button" data-toggle="sidebar">

@@ -18,26 +18,17 @@ require('../layouts/admin/_left-panel.php'); ?>
                             <tr>
                                 <th scope="col">Specialty Name</th>
                                 <th scope="col">Field</th>
-                                <th scope="col">Number of Courses</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                         <?php foreach($specialties as $specialty): ?>
                             <?php 
-                                // $query = new QueryBuilder;
-                                // $query
-                                //     ->select('field_id')
-                                //     ->from('fields')
-                                //     ->where('department_id = :department_id')
-                                //     ->setParam('department_id', $department['department_id']);
-                                $number_courses = 0;
                                 $field = Model::find('field_name', 'fields', 'field_id', $specialty['field_id']);
                              ?>
                             <tr>
                                 <td><a href="/admin/specialty/specialty-infos/<?= $specialty['specialty_id'] ?>"><?= $specialty['specialty_name'] ?></a></td>
                                 <td><?= $field ?></td>
-                                <td><?= $number_courses; ?></td>
                                 <td><button type="button" class="btn btn-danger btn-block" onclick="deleteRecord('specialty', '<?= $specialty['specialty_id'] ?>')">Delete</button></td>
                             </tr>
                         <?php endforeach; ?>

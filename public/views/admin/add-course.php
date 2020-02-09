@@ -45,7 +45,7 @@ if(isset($_POST['add'])){
         }
 
         if($form::isValid()){
-            $register = Register::register('courses', ['course_name', 'number_chapter', 'course_price', 'course_image', 'course_description'], '?,?,?,?,?', [$course_name, $number_topics, $course_price, '/assets/images/course/default.png', $description]);
+            $register = Register::register('courses', ['course_name', 'number_chapter', 'course_price', 'course_image', 'course_description', 'status'], '?,?,?,?,?,?', [$course_name, $number_topics, $course_price, '/assets/images/course/default.png', $description, 'not-assign']);
             if($register){
                 Notify::success("Course added");
                 Funcs::redirect("/admin/course/courses");
@@ -60,5 +60,6 @@ if(isset($_POST['add'])){
 }else{
     $form::clearInput();
 }
+
 
 require("html/add-course.view.php");

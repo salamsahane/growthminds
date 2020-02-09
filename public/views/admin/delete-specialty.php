@@ -5,7 +5,7 @@ use App\Models\QueryBuilder;
 use App\Utils\Funcs;
 use App\Utils\Notify;
 
-$path  = "/admin/specialty/all-specialties";
+$path  = "/admin/specialty/specialties";
 
 if(isset($this->view_data['id'])){
 
@@ -13,21 +13,30 @@ if(isset($this->view_data['id'])){
 
     if($specialty != null){
 
-        $query = new QueryBuilder;
-        $query
-            ->delete('specialties')
-            ->where('specialty_id = :specialty_id')
-            ->setParam('specialty_id', $this->view_data['id']);
+        $req = (new QueryBuilder)
+                    ->delete('courses_per_specialty')
+                    ->where("specialty_id = :specialty_id")
+                    ->setParam('specialty_id', $this->view_data['id']);
+        $deleteCourses = $req->deleteRecord();
 
-        $delete = $query->deleteRecord();
-
-        if($delete){
-            Notify::success("Specialty deleted");
-            Funcs::redirect($path);
-        }else{
-            Notify::danger("Invalid Parameter");
-            Funcs::redirect($path);
+        if($deleteCourses){
+            $query = new QueryBuilder;
+            $query
+                ->delete('specialties')
+                ->where('specialty_id = :specialty_id')
+                ->setParam('specialty_id', $this->view_data['id']);
+    
+            $delete = $query->deleteRecord();
+    
+            if($delete){
+                Notify::success("Specialty deleted");
+                Funcs::redirect($path);
+            }else{
+                Notify::danger("Invalid Parameter");
+                Funcs::redirect($path);
+            }
         }
+
 
     }else{
         Notify::danger("Invalid Parameter");

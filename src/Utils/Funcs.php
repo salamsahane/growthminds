@@ -53,13 +53,22 @@ class Funcs{
         return $interval->format('%H');
     }
 
-    public static function setOptions(string $table, string $option, string $value): void
+    public static function setOptions(string $table, string $option, string $value, ?string $condition = null, $condition_value = null): void
     {
         $query = (new QueryBuilder)->from($table);
+        if($condition != null){
+            $query->where("$condition = ?")->setParam(null, $condition_value);
+        }
         $results = $query->fetchAll();
         foreach($results as $result){
             echo "<option value='" . $result[$value] . "'>" . $result[$option] . "</option>";
         }
+    }
+
+    public static function previous_page(): ?string
+    {
+        $previous = str_replace("http://" . WEBSITE_URL, '', $_SERVER['HTTP_REFERER']);
+        return $previous;
     }
 
 }

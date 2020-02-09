@@ -35,6 +35,17 @@ require('../layouts/admin/_left-panel.php'); ?>
                                             <option value=""></option>
                                         </select>
                                     </div>
+                                    <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <label for="specialty_price" class="form-control-label">Specialty Price:</label>
+                                            <div class="input-group">
+                                                <input type="number" name="specialty_price" id="specialty_price" value="<?= $form::getInput('specialty_price') ?>" class="form-control" placeholder="In XAF">
+                                                <div class="input-group-addon">
+                                                    <i class="fas fa-money-bill-wave"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label for="description" class="form-control-label">Description:</label>
                                         <textarea name="description" id="description" cols="10" rows="10" class="form-control"></textarea>

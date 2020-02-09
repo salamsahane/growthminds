@@ -2,6 +2,7 @@
 
 use App\Core\Model;
 use App\Models\QueryBuilder;
+use App\Utils\Funcs;
 
 require('../layouts/admin/_left-panel.php'); ?>
 <!-- Right Panel -->
@@ -12,10 +13,12 @@ require('../layouts/admin/_left-panel.php'); ?>
         <!-- Animated -->
         <div class="animated fadeIn">
             <div class="mb-2">
-                <a href="/admin/course/courses" class="btn btn-light"><i class="fas fa-arrow-left"></i> Back</a>
+                <a href="<?= Funcs::previous_page(); ?>" class="btn btn-light"><i class="fas fa-arrow-left"></i> Back</a>
             </div>
             <!-- Course Infos -->
-            <h2 class="pb-2 display-4"><?= $course->course_name ?></h2>
+            <h2 class="pb-2 display-4">
+                <?= $course->course_name ?>
+            </h2>
             <div class="row mb-4">
                 <div class="col-md-4">
                     <img src="<?= $course->course_image ?>" alt="<?= $course->course_name ?>" class="shadow-sm rounded">
@@ -23,6 +26,10 @@ require('../layouts/admin/_left-panel.php'); ?>
                 <div class="col-md-8">
                     <p>
                         <?= $course->course_description  ?>
+                    </p>
+                    <p class="lead">
+                        Status: <?= str_replace('-',' ', ucfirst($course->status)) ?> | 
+                        Instructor: <a href="/admin/instructor/profile/<?= $instructor_id ?>" style="text-decoration: underline"><?= ucfirst($instructor->first_name) . ' ' . ucfirst($instructor->last_name) ?></a>
                     </p>
                     <div class="row">
                         <div class="col-md-8">

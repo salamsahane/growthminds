@@ -37,12 +37,15 @@ class Model{
         return $result;
     }
 
-    public static function getAll(string $table, string $condition, string $param): ?Array{
+    public static function getAll(string $table, string $condition, string $param, ?string $direction = null): ?Array{
         $query = new QueryBuilder;
         $query
             ->from($table)
             ->where($condition)
             ->setParam(null, $param);
+            if($direction != null){
+                $query->orderBy($direction, 'asc');
+            }
 
         $result = $query->fetchAll();
         return $result;

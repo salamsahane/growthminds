@@ -19167,7 +19167,7 @@ html {
 }
 
 [dir=ltr] .bg-gradient-red {
-    background-image: linear-gradient(128deg, #ce2124bd, #ce2125)
+    background-image: linear-gradient(128deg, #ce2124bd, #ce2125);
 }
 
 [dir=ltr] .border-1 {

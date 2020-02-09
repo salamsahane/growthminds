@@ -9,7 +9,7 @@ for($i = 1; $i <= 10; $i++){
     $lname = $faker->lastName;
     $email = $faker->email;
     $gender = $faker->randomElement(['male', 'female']);
-    $profile = 'admin';
+    $profile = 'instructor';
     $avatar = '/assets/images/avatars/avatar.png';
     $password = password_hash('1234567890', PASSWORD_DEFAULT);
     $active = $faker->randomElement(['0', '1']);

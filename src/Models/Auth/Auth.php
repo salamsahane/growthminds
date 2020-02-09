@@ -27,8 +27,6 @@ class Auth{
         if(password_verify($password, $user->password) && $user->active == 1){
             $_SESSION['auth'] = $user->person_id;
             return $user;
-        }else{
-
         }
 
         return null;
@@ -37,16 +35,19 @@ class Auth{
     public function adminLogin(string $email, string $password): ?Person{
         $person = $this->login($email, $password);
         if(is_null($person) || $person->profil != 'admin'){
+            self::logout();
             return null;
         }
         return $person;
     }
 
-    public static function logout(string $path)
+    public static function logout(?string $path = null)
     {
         session_destroy();
         $_SESSION = [];
-        Funcs::redirect($path);
+        if($path != null){
+            Funcs::redirect($path);
+        }
     }
 
     public function person(): ?Person

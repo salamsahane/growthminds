@@ -17,4 +17,6 @@ define("MAILS", ROOT . 'public' . DIRECTORY_SEPARATOR . 'mails' . DIRECTORY_SEPA
 
 require('../vendor/autoload.php');
 
+// dd($_SERVER);
+
 new \App\Core\App;
