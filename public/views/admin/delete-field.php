@@ -23,11 +23,21 @@ if(isset($this->view_data['id'])){
         $hasSpecialty = $query->count('specialty_id');
 
         if($hasSpecialty > 0){
+
+            foreach($query->fetchAll() as $row){
+                $q = (new QueryBuilder)
+                        ->delete("courses_per_specialty")
+                        ->where("specialty_id = ?")
+                        ->setParam(null, $row['specialty_id']);
+                $remove = $q->deleteRecord();
+            }
+
             $query
                 ->delete("specialties")
                 ->where('field_id = :field_id')
                 ->setParam("field_id", $this->view_data['id']);
             $deleteSpecialty = $query->deleteRecord();
+
         }
         $query
             ->delete('fields')

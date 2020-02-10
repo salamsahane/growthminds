@@ -29,11 +29,10 @@
                 <!-- specialty -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Specialty</a>
+                        aria-expanded="false"> <i class="menu-icon fa fa-star"></i>Specialty</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fas fa-list"></i><a href="/admin/specialty/specialties">List of Specialties</a></li>
                         <li><i class="menu-icon fas fa-plus"></i><a href="/admin/specialty/add-specialty">Add Specialty</a></li>
-                        <li><i class="fas fa-hand-point-right"></i><a href="forms-advanced.html">Assign Course</a></li>
                     </ul>
                 </li>
                 <!-- Course -->

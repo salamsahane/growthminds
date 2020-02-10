@@ -19,22 +19,20 @@ if(isset($this->view_data['id'])){
                     ->setParam('specialty_id', $this->view_data['id']);
         $deleteCourses = $req->deleteRecord();
 
-        if($deleteCourses){
-            $query = new QueryBuilder;
-            $query
-                ->delete('specialties')
-                ->where('specialty_id = :specialty_id')
-                ->setParam('specialty_id', $this->view_data['id']);
-    
-            $delete = $query->deleteRecord();
-    
-            if($delete){
-                Notify::success("Specialty deleted");
-                Funcs::redirect($path);
-            }else{
-                Notify::danger("Invalid Parameter");
-                Funcs::redirect($path);
-            }
+        $query = new QueryBuilder;
+        $query
+            ->delete('specialties')
+            ->where('specialty_id = :specialty_id')
+            ->setParam('specialty_id', $this->view_data['id']);
+
+        $delete = $query->deleteRecord();
+
+        if($delete){
+            Notify::success("Specialty deleted");
+            Funcs::redirect($path);
+        }else{
+            Notify::danger("Invalid Parameter");
+            Funcs::redirect($path);
         }
 
 

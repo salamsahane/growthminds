@@ -32,7 +32,7 @@ require('../layouts/admin/_left-panel.php'); ?>
                 </div>
                 <div class="col-md-8">
                     <p>
-                        <?= $specialty->specialty_description  ?>
+                        <?= htmlentities(nl2br($specialty->specialty_description)) ?>
                     </p>
                     <p class="text-muted">
                         <?= $field ?> | <?= $program ?>
