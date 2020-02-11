@@ -4,9 +4,20 @@ namespace App\Utils;
 
 class Form{
 
+    /**
+     * @var array
+     */
     public static $fields = [];
+    /**
+     * @var array
+     */
     public static $errors = [];
 
+    /**
+     * @param array $fields
+     * 
+     * @return void
+     */
     public static function setFields(array $fields)
     {
         foreach($fields as $field){
@@ -14,6 +25,9 @@ class Form{
         }
     }
 
+    /**
+     * @return bool
+     */
     public static function NotEmpty(): bool
     {
         if (count(self::$fields) != 0) {
@@ -26,16 +40,27 @@ class Form{
         }
     }
 
+    /**
+     * @return bool
+     */
     public static function isValid(): bool
     {
         return empty(self::$errors);
     }
 
+    /**
+     * @param string $error
+     * 
+     * @return void
+     */
     public static function setError(string $error)
     {
         self::$errors[] = $error;
     }
 
+    /**
+     * @return void
+     */
     public static function getErrors()
     {
         if(isset(self::$errors) && count(self::$errors) != 0){
@@ -47,6 +72,11 @@ class Form{
         }
     }
 
+    /**
+     * saveInputData
+     *
+     * @return void
+     */
     public static function saveInputData(): void
     {
         foreach ($_POST as $key => $value) {
@@ -56,6 +86,13 @@ class Form{
         }
     }
 
+    /**
+     * getInput
+     *
+     * @param  string $key
+     *
+     * @return string
+     */
     public static function getInput(string $key): ?string
     {
         return !empty($_SESSION['input'][$key])
@@ -63,6 +100,11 @@ class Form{
           : null;
     }
 
+    /**
+     * clearInput
+     *
+     * @return void
+     */
     public static function clearInput(): void
     {
         if (isset($_SESSION['input'])) {

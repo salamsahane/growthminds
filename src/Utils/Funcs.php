@@ -7,6 +7,11 @@ use \DateTime;
 
 class Funcs{
 
+    /**
+     * @param string $path
+     * 
+     * @return void
+     */
     public static function redirect(string $path)
     {
         header("HTTP/1.1 301 Moved Permanently");
@@ -14,6 +19,9 @@ class Funcs{
         exit;
     }
 
+    /**
+     * @return bool
+     */
     public static function is_logged_in(): bool
     {
         $user = Auth::getAuth();
@@ -23,6 +31,9 @@ class Funcs{
         return false;
     }
 
+    /**
+     * @return bool
+     */
     public static function is_super_admin(): bool
     {
         $user = Auth::getAuth();
@@ -32,7 +43,12 @@ class Funcs{
         return false;
     }
 
-    public static function random(int $length):string
+    /**
+     * @param integer $length
+     * 
+     * @return string
+     */
+    public static function random(int $length): string
     {
         $string = '';
         $chaine = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -44,6 +60,12 @@ class Funcs{
         return $string;
     }
 
+    /**
+     * @param integer $start_timestamp
+     * @param integer $end_timestamp
+     * 
+     * @return String
+     */
     public static function timeDifference(int $start_timestamp, int $end_timestamp): String
     {
         $start_time = new DateTime("@$start_timestamp");
@@ -53,6 +75,15 @@ class Funcs{
         return $interval->format('%H');
     }
 
+    /**
+     * @param string $table
+     * @param string $option
+     * @param string $value
+     * @param ?string $condition
+     * @param null $condition_value
+     * 
+     * @return void
+     */
     public static function setOptions(string $table, string $option, string $value, ?string $condition = null, $condition_value = null): void
     {
         $query = (new QueryBuilder)->from($table);
@@ -65,6 +96,11 @@ class Funcs{
         }
     }
 
+    /**
+     * previous_page
+     *
+     * @return string
+     */
     public static function previous_page(): ?string
     {
         $previous = str_replace("http://" . WEBSITE_URL, '', $_SERVER['HTTP_REFERER']);
