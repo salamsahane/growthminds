@@ -69,8 +69,22 @@ class Auth{
         return $user ?: null;
     }
 
+    public static function getAdminAuth(): ?Person
+    {
+        if(self::person()->profil == "admin"){
+            return self::person();
+        }else{
+            self::logout('/admin/account/login');
+        }
+    }
+
     public static function getAuth(): ?Person
     {
+        // if(self::person()->profil != "admin"){
+        //     return self::person();
+        // }else{
+        //     self::logout('/account/login');
+        // }
         return self::person();
     }
 

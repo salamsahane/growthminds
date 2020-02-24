@@ -4,7 +4,7 @@ use App\Controllers\Router;
 
 session_start();
 
-define('WEBSITE_NAME', 'Growth Minds');
+define('WEBSITE_NAME', 'GrowthMinds');
 define('WEBSITE_URL', 'localhost:8000');
 define('ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 define('SRC', ROOT . 'src' . DIRECTORY_SEPARATOR);

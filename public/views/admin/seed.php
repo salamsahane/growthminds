@@ -4,12 +4,12 @@ use App\Models\Register;
 
 $faker = Faker\Factory::create();
 
-for($i = 1; $i <= 10; $i++){
+for($i = 1; $i <= 3; $i++){
     $fname = $faker->firstName;
     $lname = $faker->lastName;
     $email = $faker->email;
     $gender = $faker->randomElement(['male', 'female']);
-    $profile = 'instructor';
+    $profile = 'prospect';
     $avatar = '/assets/images/avatars/avatar.png';
     $password = password_hash('1234567890', PASSWORD_DEFAULT);
     $active = $faker->randomElement(['0', '1']);

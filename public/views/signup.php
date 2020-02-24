@@ -23,7 +23,7 @@ if(isset($_POST['signup'])){
             $form::setError("Name too short");
         }
 
-        if(!ctype_alpha($first_name) || !ctype_alpha($last_name)){
+        if(strpbrk($first_name, '0123456789') != false || strpbrk($last_name, '01234567890') != false){
             $form::setError("Invalid name");
         }
 

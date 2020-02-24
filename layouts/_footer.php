@@ -40,6 +40,9 @@
  <!-- <script src="/libraries/AlertifyJS/build/alertify.min.js"></script> -->
  <script src="<?= DIRECTORY_SEPARATOR .'libraries' . DIRECTORY_SEPARATOR . 'AlertifyJS' . DIRECTORY_SEPARATOR .  'build' . DIRECTORY_SEPARATOR . 'alertify.min.js'?>"></script>
 
+ <!-- TinyMCE -->
+ <script src="https://cdn.tiny.cloud/1/i17ihccb1zwjcogwuoh0gzdkdy6my09sewr9yzhj7jre0wt4/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+ <script src="/assets/js/tinymce-init.js"></script>
 
 <?php
     if(isset($_SESSION['alertify'])){
@@ -47,6 +50,12 @@
         unset($_SESSION['alertify']);
     }
 ?>
+
+<script>
+    $('body').bind('copy',function(e) {
+        e.preventDefault(); return false; 
+    });
+</script>
 
 
 

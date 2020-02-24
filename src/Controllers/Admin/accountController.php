@@ -21,10 +21,10 @@ class accountController extends Controller{
         $this->view->render('admin');
     }
 
-    // public function seed(){
-    //     $this->view('seed', 'seed');
-    //     $this->view->render('admin');
-    // }
+    public function seed(){
+        $this->view('seed', 'seed');
+        $this->view->render('admin');
+    }
 
     public function alladmins(){
         $this->view('all-admins', 'Administrators');

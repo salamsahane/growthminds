@@ -1268,7 +1268,7 @@
             }]), t
         }();
     domFactory.handler.register("text-scramble", function() {
-        var t, e = ["Human Resource", "Computer Engineering", "Accountancy"];
+        var t, e = ["Human Resource", "Computer Engineering", "Accountancy", "Telecommunication"];
         return {
             observers: ["_reset(phrases)"],
             listeners: ["document._onVisibilityChange(visibilitychange)"],

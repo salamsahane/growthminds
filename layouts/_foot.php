@@ -6,19 +6,18 @@
                     <p class="text-white-70 mb-8pt"><strong>Follow us</strong></p>
                     <nav class="nav nav-links nav--flush">
                         <a href="#" class="nav-link mr-8pt"><img
-                                src="assets/images/icon/footer/facebook-square%402x.png" width="24" height="24"
+                                src="/assets/images/icon/footer/facebook-square%402x.png" width="24" height="24"
                                 alt="Facebook"></a>
-                        <a href="#" class="nav-link mr-8pt"><img src="assets/images/icon/footer/twitter-square%402x.png"
+                        <a href="#" class="nav-link mr-8pt"><img src="/assets/images/icon/footer/twitter-square%402x.png"
                                 width="24" height="24" alt="Twitter"></a>
-                        <a href="#" class="nav-link mr-8pt"><img src="assets/images/icon/footer/vimeo-square%402x.png"
+                        <a href="#" class="nav-link mr-8pt"><img src="/assets/images/icon/footer/vimeo-square%402x.png"
                                 width="24" height="24" alt="Vimeo"></a>
-                        <a href="#" class="nav-link"><img src="assets/images/icon/footer/youtube-square%402x.png"
+                        <a href="#" class="nav-link"><img src="/assets/images/icon/footer/youtube-square%402x.png"
                                 width="24" height="24" alt="YouTube"></a>
                     </nav>
                 </div>
                 <div class="col-md-6 col-sm-4 mb-24pt mb-md-0 d-flex align-items-center">
-                    <a href="#" class="btn btn-outline-white">English <span
-                            class="icon--right material-icons">arrow_drop_down</span></a>
+                    <a href="#" class="btn btn-outline-white">English</a>
                 </div>
                 <div class="col-md-4 text-md-right">
                     <p class="mb-8pt d-flex align-items-md-center justify-content-md-end">

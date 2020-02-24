@@ -1,13 +1,16 @@
 <?php
 namespace App\Utils;
 
+use App\Models\Auth\Auth;
+
 class Filter{
 
     public static function auth(?string $root = null)
     {
         if(isset($_SESSION['auth']) && !is_null($_SESSION['auth'])){
+            $person = Auth::getAuth();
             if(is_null($root)){
-                Funcs::redirect('/');
+                Funcs::redirect('/' . strtolower($person->profil) . '/' . strtolower($person->profil) . '-profile/' . $person->person_id);
             }else{
                 Funcs::redirect('/admin');
             }
@@ -24,5 +27,7 @@ class Filter{
             }
         }
     } 
+
+
 
 }
