@@ -5,6 +5,11 @@ use App\Models\Auth\Auth;
 
 class Filter{
 
+    /**
+     * @param ?string $root
+     * 
+     * @return void
+     */
     public static function auth(?string $root = null)
     {
         if(isset($_SESSION['auth']) && !is_null($_SESSION['auth'])){
@@ -17,6 +22,11 @@ class Filter{
         }
     } 
 
+    /**
+     * @param ?string $root
+     * 
+     * @return void
+     */
     public static function guest(?string $root = null)
     {
         if(!isset($_SESSION['auth']) && is_null($_SESSION['auth'])){
