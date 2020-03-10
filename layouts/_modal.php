@@ -52,7 +52,7 @@ $programs = $query->fetchAll();
                                                         <?php if($sql->count('specialty_id') > 0): ?>
                                                         <?php foreach($specialties as $specialty): ?>
                                                             <li class="nav-item">
-                                                                <a class="nav-link px-0" href="#"><?= $specialty['specialty_name'] ?></a>
+                                                                <a class="nav-link px-0" href="/specialty/specialty-details/<?= $specialty['specialty_id'] ?>"><?= $specialty['specialty_name'] ?></a>
                                                             </li>  
                                                         <?php endforeach; ?>
                                                         <?php endif ?>

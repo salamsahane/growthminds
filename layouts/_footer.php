@@ -55,6 +55,10 @@
     $('body').bind('copy',function(e) {
         e.preventDefault(); return false; 
     });
+
+    if($('.cookie-banner').length){
+        $('.cookie-banner').slideDown(900);
+    }
 </script>
 
 

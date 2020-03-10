@@ -50,6 +50,9 @@
                     <input id="password_confirm" name="password_confirm" type="password" class="form-control"
                         placeholder="Confirm password ...">
                 </div>
+                <p class="text-muted">
+                  By signing up to this website, you agree with our <a href="/policy/privacy-policy">Privacy Policy</a> and respecting our <a href="/policy/terms-conditions">Terms and Conditions</a> of Usage.
+                </p>
                 <button class="btn btn-lg btn-accent" type="submit" name="signup">Create account</button>
             </form>
         </div>

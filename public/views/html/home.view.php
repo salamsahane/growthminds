@@ -5,6 +5,7 @@ use App\Core\Model;
 ?>
 <div class="mdk-box mdk-box bg-dark js-mdk-box position-relative overflow-hidden mb-0"
     data-effects="parallax-background blend-background">
+
     <div class="mdk-box__bg">
         <div class="mdk-box__bg-front"
             style="background-image: url(/assets/images/Thinkstock_475924741-CampusUSA-multiethnic-college-students-in-caps-and-gowns.jpg);"></div>
@@ -13,9 +14,9 @@ use App\Core\Model;
         <div class="container page__container py-64pt py-md-112pt">
             <div class="row align-items-center text-center text-md-left">
                 <div class="col-md-10 col-lg-10 order-1 order-md-0">
-                    <h1 class="text-white">Learn <span
+                    <h1 class=" text-dark">Learn <span
                             class="d-block d-md-inline-block text-scramble js-text-scramble">Development</span></h1>
-                    <p class="lead mb-32pt mb-lg-48pt text-white">Management, Technology and Creative Skills taught by
+                    <p class="lead mb-32pt mb-lg-48pt text-dark">Management, Technology and Creative Skills taught by
                         national experts. Explore a wide range of skills with our professional tutorials.</p>
                     <a href="/course/courses" class="btn btn-lg btn-white btn--raised mb-16pt">Browse Courses</a>
                 </div>
@@ -44,7 +45,7 @@ use App\Core\Model;
                 </div>
                 <div class="flex">
                     <p class="mb-0"><strong>By National Experts</strong></p>
-                    <p class="text-black-70 mb-0">Professional development from the best people.</p>
+                    <p class="text-black-70 mb-0">Professional course content from the best people.</p>
                 </div>
             </div>
             <div class="d-flex col-md align-items-center">
@@ -54,7 +55,7 @@ use App\Core\Model;
                 </div>
                 <div class="flex">
                     <p class="mb-0"><strong>Unlimited Access</strong></p>
-                    <p class="text-black-70 mb-0">Unlock Library and learn any topic with one subscription.</p>
+                    <p class="text-black-70 mb-0">Unlock course or specialty and learn any topic with one subscription.</p>
                 </div>
             </div>
         </div>
@@ -72,6 +73,7 @@ use App\Core\Model;
         </div>
 
         <div class="row">
+            <?php for($i = 0; $i <= 3; $i++): ?>
             <?php foreach($courses as $course): ?>
                 <?php 
                     $instructor_id = Model::find('person_id', 'courses_assign', 'course_id', $course['course_id']);
@@ -132,6 +134,7 @@ use App\Core\Model;
 
             </div>
             <?php endforeach; ?>
+            <?php endfor ?>
         </div>
         <div class="pt-md-16pt text-center">
             <a href="/course/courses" class="btn btn-outline-secondary">Browse Courses</a>
@@ -287,7 +290,6 @@ use App\Core\Model;
 </div>
 
 
-
 <div class="js-fix-footer bg-white border-top-2">
     <div class="container page-section py-lg-48pt">
         <div class="row">
@@ -296,37 +298,32 @@ use App\Core\Model;
                     <div class="col-6 col-md-4 mb-24pt mb-md-0">
                         <h4 class="text-70">Learn</h4>
                         <nav class="nav nav-links nav--flush flex-column">
-                            <a class="nav-link" href="library.html">Library</a>
-                            <a class="nav-link" href="library-featured.html">Featured</a>
-                            <a class="nav-link" href="library-filters.html">Explore</a>
-                            <a class="nav-link" href="paths.html">Learning Paths</a>
+                            <a class="nav-link" href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'course/courses' ?>">Courses</a>
+                            <a class="nav-link" href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'specialty/specialties' ?>">Specialties</a>
                         </nav>
                     </div>
                     <div class="col-6 col-md-4 mb-24pt mb-md-0">
                         <h4 class="text-70">Join us</h4>
                         <nav class="nav nav-links nav--flush flex-column">
-                            <a class="nav-link" href="pricing.html">Pricing</a>
-                            <a class="nav-link" href="login.html">Login</a>
-                            <a class="nav-link" href="signup.html">Sign Up</a>
-                            <a class="nav-link" href="signup-payment.html">Payment</a>
+                            <a class="nav-link" href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'account/login' ?>">Login</a>
+                            <a class="nav-link" href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'account/signup' ?>">Sign Up</a>
                         </nav>
                     </div>
                     <div class="col-6 col-md-4 mb-32pt mb-md-0">
                         <h4 class="text-70">Community</h4>
                         <nav class="nav nav-links nav--flush flex-column">
-                            <a class="nav-link" href="student-discussions.html">Discussions</a>
-                            <a class="nav-link" href="student-discussions-ask.html">Ask Question</a>
-                            <a class="nav-link" href="student-profile.html">Student Profile</a>
-                            <a class="nav-link" href="instructor-profile.html">Instructor Profile</a>
+                            <a class="nav-link" href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'home/about-us' ?>">About US</a>
+                            <a class="nav-link" href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'home/faq' ?>">FAQ</a>
+                            <a class="nav-link" href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'home/contact-us' ?>">Contact US</a>
                         </nav>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 text-md-right">
                 <p class="text-70 brand justify-content-md-end">
-                    <img class="brand-icon" src="assets/images/logo/black-70%402x.png" width="30" alt="Tutorio"> Growth Minds
+                    <img class="brand-icon" src="assets/images/logo/black-70%402x.png" width="30" alt="Tutorio"> <?= WEBSITE_NAME ?>
                 </p>
-                <p class="text-muted mb-0 mb-lg-16pt">Growth Minds is an online learning platform that helps anyone achieve
+                <p class="text-muted mb-0 mb-lg-16pt"><?= WEBSITE_NAME ?> is an online learning platform that helps everyone achieve
                     their personal and professional goals.</p>
             </div>
         </div>

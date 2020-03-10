@@ -76,4 +76,21 @@ Tree Diagram CSS
   .tree-content .tree li a:hover + ul ul::before {
     border-color: #e9453f; }
 
+.cookie-banner {
+  display: none;
+  background-color: #333;
+  color: #fcfcfc;
+  padding: 15px 0;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.89; }
+  .cookie-banner p a {
+    color: slategray !important;
+    text-decoration: none; }
+    .cookie-banner p a:hover {
+      text-decoration: underline; }
+
 /*# sourceMappingURL=main.css.map */

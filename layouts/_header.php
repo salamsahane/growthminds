@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="<?= '/libraries' . DIRECTORY_SEPARATOR . 'AlertifyJS' . DIRECTORY_SEPARATOR .  'build' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'themes' . DIRECTORY_SEPARATOR . 'default.min.css'?>">
 
     <!-- App CSS -->
+    <link type="text/css" href="/assets/css/main.css" rel="stylesheet">
     <link type="text/css" href="/assets/css/app.css" rel="stylesheet">
 </head>
 

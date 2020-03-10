@@ -35,21 +35,6 @@
             </form>
         </div>
     </div>
-    <!-- <div class="page-separator m-0">
-        <div class="page-separator__text">or sign-in with</div>
-        <div class="page-separator__bg-top bg-white"></div>
-    </div>
-    <div class="bg-body pt-32pt pb-32pt pb-md-64pt text-center">
-        <div class="container page__container">
-            <a href="student-dashboard.html" class="btn btn-lg btn-secondary btn-block-xs">Facebook</a>
-            <a href="student-dashboard.html" class="btn btn-lg btn-secondary btn-block-xs">Twitter</a>
-            <a href="student-dashboard.html" class="btn btn-lg btn-secondary btn-block-xs">Google+</a>
-        </div>
-    </div> -->
-
-
-
     <?php require("../layouts/_foot.php"); ?>
-
 </div>
 <!-- // END Header Layout Content -->

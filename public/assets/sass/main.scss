@@ -113,3 +113,27 @@ $reverse: false;
         border-color:  #e9453f;
     }
 }
+
+.cookie-banner{
+  display: none;
+  background-color: #333;
+  color: #fcfcfc;
+  padding: 15px 0;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.89;
+  
+  p{
+    a{
+      color: slategray !important;
+      text-decoration: none;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -2,6 +2,16 @@
 <?php
 use App\Utils\Funcs;
 ?>
+<?php if(!isset($_COOKIE['accept-cookies'])): ?>
+<div class="cookie-banner">
+    <div class="container">
+        <p>
+            The website uses cookies  in order to offer you most relevant information, responsive information, improve your browsing experience and store informations about how you use it. These cookies are completely safe and secure and will never contain any sensitive information. <a href="/policy/cookie-policy">Read more here</a>
+        </p>
+        <a href="/policy/accept-cookie" class="btn btn-outline-white">Ok, I accept</a>
+    </div>
+</div>
+<?php endif; ?>
 <div id="header" class="mdk-header js-mdk-header mb-0" data-effects="waterfall blend-background" data-fixed
     data-condenses>
     <div class="mdk-header__content">
@@ -16,8 +26,8 @@ use App\Utils\Funcs;
             <!-- Navbar Brand -->
             <a href="/" class="navbar-brand">
                 <img class="navbar-brand-icon mr-0 mr-md-8pt" src="/assets/images/logo/white-100%402x.png" width="30"
-                    alt="Growth Minds">
-                <span class="d-none d-md-block">Growth Minds</span>
+                    alt="<?= WEBSITE_NAME ?>">
+                <span class="d-none d-md-block"><?=WEBSITE_NAME ?></span>
             </a>
 
             <?php if(Funcs::is_logged_in()):  ?>
