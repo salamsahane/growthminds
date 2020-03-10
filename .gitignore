@@ -1,6 +1,5 @@
 .vscode
-vendor/fzaninotto
-vendor/altorouter
+vendor
 test
 ngrok.exe
 tasks.todo
