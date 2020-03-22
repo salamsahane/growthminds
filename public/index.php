@@ -1,7 +1,5 @@
 <?php
 
-use App\Controllers\Router;
-
 session_start();
 
 define('WEBSITE_NAME', 'Growthminds');
@@ -16,7 +14,5 @@ define("MAILS", ROOT . 'public' . DIRECTORY_SEPARATOR . 'mails' . DIRECTORY_SEPA
 // define('MODEL', SRC . 'Models' . DIRECTORY_SEPARATOR );
 
 require('../vendor/autoload.php');
-
-// dd($_SERVER);
 
 new \App\Core\App;

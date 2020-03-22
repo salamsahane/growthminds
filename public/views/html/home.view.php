@@ -13,7 +13,7 @@ use App\Core\Model;
     <div class="mdk-box__content">
         <div class="container page__container py-64pt py-md-112pt">
             <div class="row align-items-center text-center text-md-left">
-                <div class="col-md-10 col-lg-10 order-1 order-md-0">
+                <div class="col-sm-12 col-md-10 col-lg-10 order-1 order-md-0">
                     <h1 class=" text-dark">Learn <span
                             class="d-block d-md-inline-block text-scramble js-text-scramble">Development</span></h1>
                     <p class="lead mb-32pt mb-lg-48pt text-dark">Management, Technology and Creative Skills taught by
@@ -313,8 +313,8 @@ use App\Core\Model;
                         <h4 class="text-70">Community</h4>
                         <nav class="nav nav-links nav--flush flex-column">
                             <a class="nav-link" href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'home/about-us' ?>">About US</a>
-                            <a class="nav-link" href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'home/faq' ?>">FAQ</a>
                             <a class="nav-link" href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'home/contact-us' ?>">Contact US</a>
+                            <a class="nav-link" href="<?= WEBSITE_URL . DIRECTORY_SEPARATOR . 'home/faq' ?>">FAQ</a>
                         </nav>
                     </div>
                 </div>
@@ -328,6 +328,5 @@ use App\Core\Model;
             </div>
         </div>
     </div>
-    
     <?php require("../layouts/_foot.php"); ?>
 </div>

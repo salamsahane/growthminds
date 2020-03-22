@@ -11,4 +11,10 @@ class homeController extends Controller{
         $this->view->render();
     }
 
+    public function contactus()
+    {
+        $this->view('contact', 'Contact Us');
+        $this->view->render();
+    }
+
 }

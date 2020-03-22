@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?= ucfirst($title) . " | Growth Minds" ?? "Growth Minds" ?></title>
+    <title><?= ucfirst($title) . " | " . WEBSITE_NAME ?? WEBSITE_NAME ?></title>
 
     <!-- Perfect Scrollbar -->
     <link type="text/css" href="/assets/vendor/perfect-scrollbar.css" rel="stylesheet">
@@ -29,6 +29,10 @@
     <!-- App CSS -->
     <link type="text/css" href="/assets/css/main.css" rel="stylesheet">
     <link type="text/css" href="/assets/css/app.css" rel="stylesheet">
+
+    <!-- autogrow js -->
+    <script src="https://unpkg.com/@ungap/custom-elements-builtin" defer></script>
+    <script src="/assets/js/autogrow.js" defer></script>
 </head>
 
 <body class="layout-navbar-mini-fixed-bottom">

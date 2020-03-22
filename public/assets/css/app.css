@@ -18266,7 +18266,8 @@ html {
 
 [dir=ltr] .mdk-header-layout {
     height: 100%;
-    position: relative;
+    width: 100%;
+    position: absolute;
     overflow: hidden;
     z-index: 0
 }
@@ -19168,7 +19169,7 @@ html {
 }
 
 [dir=ltr] .bg-gradient-red {
-    background-image: linear-gradient(128deg, #ce2124bd, #ce2125);
+    background-image: linear-gradient(128deg, #ce2135, #d1152b);
 }
 
 [dir=ltr] .border-1 {
@@ -23653,6 +23654,11 @@ html {
     opacity: .9
 }
 
+[dir=ltr] .mdk-header--bg-gradient-red .mdk-header__bg-front:after {
+    background-image: linear-gradient(128deg, #ce2135, #d1152b);
+    opacity: .9
+}
+
 [dir=ltr] .mdk-header--bg-gradient-purple .mdk-header__bg-front:after {
     background-image: linear-gradient(-128deg, #8a4182, #3289dc);
     opacity: .9
@@ -23694,13 +23700,13 @@ html {
     background-color: rgba(29, 33, 38, .9)
 }
 
-[dir=ltr] .mdk-box--bg-gradient-primary .mdk-box__bg-front:after {
-    background-image: linear-gradient(128deg, #1e6dbd, #3287db);
+[dir=ltr] .mdk-box--bg-gradient-red .mdk-box__bg-front:after {
+    background-image: linear-gradient(128deg, #ce2135, #d1152b);
     opacity: .9
 }
 
-[dir=ltr] .mdk-box--bg-gradient-red .mdk-box__bg-front:after {
-    background-image: linear-gradient(128deg, #ce2135c7, #ce2135);
+[dir=ltr] .mdk-box--bg-gradient-primary .mdk-box__bg-front:after {
+    background-image: linear-gradient(128deg, #1e6dbd, #3287db);
     opacity: .9
 }
 

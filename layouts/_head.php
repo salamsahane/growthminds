@@ -37,35 +37,35 @@ use App\Utils\Funcs;
                 <?php endif ?>
 
                 <nav class="nav navbar-nav ml-auto flex-nowrap">
-                        <div class="nav-item dropdown d-none d-sm-flex ml-16pt">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                <div class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle" src="<?= $person->avatar ?>" alt="<?= $person->profil ?>" />
-                                </div>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="dropdown-header"><strong><?= ucfirst($person->profil) ?></strong></div>
-                                <a class="dropdown-item" href="/<?= strtolower($person->profil) ?>/<?= strtolower($person->profil) ?>-profile/<?= $person->person_id ?>">Profile</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="dropdown-header"><strong>Account</strong></div>
-                                <?php if($person->profil != "prospect"): ?>
-                                <a class="dropdown-item" href="/<?= strtolower($person->profil) ?>/edit-profile/<?= $person->person_id ?>">Edit Account</a>
-                                <?php endif; ?>
-                                <a class="dropdown-item" href="/account/logout">Logout</a>
+                    <div class="nav-item dropdown d-none d-sm-flex ml-16pt">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            <div class="avatar avatar-sm">
+                                <img class="avatar-img rounded-circle" src="<?= $person->avatar ?>" alt="<?= $person->profil ?>" />
                             </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-header"><strong><?= ucfirst($person->profil) ?></strong></div>
+                            <a class="dropdown-item" href="/<?= strtolower($person->profil) ?>/<?= strtolower($person->profil) ?>-profile/<?= $person->person_id ?>">Profile</a>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-header"><strong>Account</strong></div>
+                            <?php if($person->profil != "prospect"): ?>
+                            <a class="dropdown-item" href="/<?= strtolower($person->profil) ?>/edit-profile/<?= $person->person_id ?>">Edit Account</a>
+                            <?php endif; ?>
+                            <a class="dropdown-item" href="/account/logout">Logout</a>
                         </div>
-                    </nav>
+                    </div>
+                </nav>
             <?php else: ?>
                 <button class="btn btn-light mr-16pt" data-toggle="modal" data-target="#courses">Programs <i
                     class="material-icons">arrow_drop_down</i></button>
                     
                 <!-- Main Navigation -->
-                <ul class="nav navbar-nav">
+                <ul class="d-none d-md-flex nav navbar-nav">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">About Us</a>
+                        <a href="/home/about-us" class="nav-link">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Contact</a>
+                        <a href="/home/contact-us" class="nav-link">Contact</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto flex-nowrap" style="white-space: nowrap;">

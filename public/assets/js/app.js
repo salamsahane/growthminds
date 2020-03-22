@@ -1220,7 +1220,7 @@
             "use strict";
 
             function t(e) {
-                r(this, t), this.el = e, this.chars = "!<>-_\\/[]{}—=+*^?#________", this.update = this.update.bind(this)
+                r(this, t), this.el = e, this.chars = "!<>-_\\/[]{}—=+*^?#_", this.update = this.update.bind(this)
             }
             return o(t, [{
                 key: "setText",
@@ -1268,7 +1268,7 @@
             }]), t
         }();
     domFactory.handler.register("text-scramble", function() {
-        var t, e = ["Human Resource", "Computer Engineering", "Accountancy", "Telecommunication"];
+        var t, e = ["Human Resource", "Computer Engineering", "Accountancy", "Telecommunication", "Project Manament", "Engineering Mathematics", "English Language", "Common Law", "Business Law", "Company Creation", "General Accounting", "General Ledger"];
         return {
             observers: ["_reset(phrases)"],
             listeners: ["document._onVisibilityChange(visibilitychange)"],

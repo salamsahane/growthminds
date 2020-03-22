@@ -1,7 +1,7 @@
 </div>
 <!-- // END Header Layout -->
 
-<?php require('_nav.php'); ?>
+<?php //require('_nav.php'); ?>
 <?php require('_drawer.php'); ?>
 <?php require('_modal.php'); ?>
 
