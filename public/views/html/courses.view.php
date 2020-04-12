@@ -53,8 +53,15 @@ use App\Core\Model;
                             $number_topics = $q->count('topic_id');    
 
                             $instructor_id = Model::find('person_id', 'courses_assign', 'course_id', $course['course_id']);
+                        if($instructor_id == null){
+                            $instructor_fname = null;
+                            $instructor_lname = null;
+                            $instructor_avatar = '/assets/images/avatars/avatar.png';
+                        }else{
                             $instructor_fname = Model::find('first_name', 'persons', 'person_id', $instructor_id);
                             $instructor_lname = Model::find('last_name', 'persons', 'person_id', $instructor_id);
+                            $instructor_avatar = Model::find('avatar', 'persons', 'person_id', $instructor_id);
+                        }
                         ?>
                         <div class="card course-list-item o-hidden overlay js-overlay" data-trigger="hover">
                             <div class="media media-stack-xs align-items-stretch">

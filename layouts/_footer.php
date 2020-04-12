@@ -21,6 +21,11 @@
 <!-- MDK -->
 <script src="/assets/vendor/material-design-kit.js"></script>
 
+<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+<!-- <script src="http://malsup.github.io/jquery.cycle.all.js"></script> -->
+
+<script src="/assets/js/cycle.js"></script>
+
 <!-- Fix Footer -->
 <script src="/assets/vendor/fix-footer.js"></script>
 
@@ -52,13 +57,66 @@
 ?>
 
 <script>
-    $('body').bind('copy',function(e) {
-        e.preventDefault(); return false; 
+    // $('body').bind('copy',function(e) {
+    //     e.preventDefault(); return false; 
+    // });
+
+    // var type = document.getElementById('activity');
+    // var typewriter2 = new Typewriter(type, {
+    //     loop: true,
+    //     delay: 20
+    // });
+
+    $(document).ready(function(){
+        var type = document.getElementById('activity');
+        var typewriter2 = new Typewriter(type, {
+            loop: true,
+            delay: 20
+        });
+        $('#imagesCarousel').cycle({ 
+            fx: 'scrollLeft', 
+            timeout: 5000,
+            before: function() {
+                typewriter2.typeString(this.alt)
+                .pauseFor(3000)
+                .deleteAll()
+                .start()
+            },
+            after: function(){
+                typewriter2.deleteAll(10);
+            }
+        });
     });
 
     if($('.cookie-banner').length){
         $('.cookie-banner').slideDown(900);
     }
+
+    var text = document.getElementById('type');
+    var typewriter = new Typewriter(text, {
+        loop: true
+    });
+
+    typewriter.typeString('Taking education outside the classroom')
+        .pauseFor(2500)
+        .deleteAll()
+        .typeString('Learning without boundaries')
+        .pauseFor(2500)
+        .deleteAll()
+        .typeString('Replicating social presences in online learning')
+        .pauseFor(2500)
+        .deleteAll()
+        .typeString('Study where you are when you want at your convenience')
+        .pauseFor(2500)
+        .deleteAll()
+        .typeString('Meets with one of the best brains to enhance your learning')
+        .pauseFor(2500)
+        .deleteAll()
+        .typeString('The future is built here')
+        .pauseFor(2500)
+        .deleteAll()
+        .start();
+
 </script>
 
 

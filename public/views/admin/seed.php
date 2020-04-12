@@ -4,7 +4,7 @@ use App\Models\Register;
 
 $faker = Faker\Factory::create();
 
-for($i = 1; $i <= 3; $i++){
+for($i = 1; $i <= 10; $i++){
     $fname = $faker->firstName;
     $lname = $faker->lastName;
     $email = $faker->email;

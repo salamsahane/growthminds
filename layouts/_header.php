@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><?= ucfirst($title) . " | " . WEBSITE_NAME ?? WEBSITE_NAME ?></title>
 
+    <link rel="icon" href="/assets/images/logo/icon.png">
+
     <!-- Perfect Scrollbar -->
     <link type="text/css" href="/assets/vendor/perfect-scrollbar.css" rel="stylesheet">
 

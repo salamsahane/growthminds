@@ -107,4 +107,41 @@ class Funcs{
         return $previous;
     }
 
+    public static function number_visits(): void
+    {
+        $page = ($_SERVER['REQUEST_URI'] == "/") ? "home" : "";
+        
+        $q = (new QueryBuilder)
+                ->update("visits")
+                ->set("number_visits = number_visits+1")
+                ->where("page_name = :page_name")
+                ->setParam("page_name", $page);
+        $update = $q->updateTable();
+    }
+
+    public static function number_uniqueVisitors(): void
+    {
+        if(!isset($_COOKIE['visit'])){
+            setcookie("visit", "yes", time() + 31556926, '/');
+            $q = (new QueryBuilder)
+                    ->update("unique_visitors")
+                    ->set("number_visits = number_visits+1");
+            $update = $q->updateTable();
+        }
+    }
+
+    public static function getUniqueVisitors(): ?int
+    {
+        $q = (new QueryBuilder)->from("unique_visitors");
+        $result = $q->fetchObj();
+        return $result->number_visits;
+    }
+
+    public static function getVisits(): ?int
+    {
+        $q = (new QueryBuilder)->from("visits");
+        $result = $q->fetchObj();
+        return $result->number_visits;
+    }
+
 }

@@ -20,9 +20,15 @@ if(!empty($this->view_data) && isset($this->view_data['course_id'])){
         $course = $query->fetchObj();
 
         $instructor_id = Model::find('person_id', 'courses_assign', 'course_id', $course->course_id);
-        $instructor_fname = Model::find('first_name', 'persons', 'person_id', $instructor_id);
-        $instructor_lname = Model::find('last_name', 'persons', 'person_id', $instructor_id);
-        $instructor_avatar = Model::find('avatar', 'persons', 'person_id', $instructor_id);
+        if($instructor_id == null){
+            $instructor_fname = null;
+            $instructor_lname = null;
+            $instructor_avatar = '/assets/images/avatars/avatar.png';
+        }else{
+            $instructor_fname = Model::find('first_name', 'persons', 'person_id', $instructor_id);
+            $instructor_lname = Model::find('last_name', 'persons', 'person_id', $instructor_id);
+            $instructor_avatar = Model::find('avatar', 'persons', 'person_id', $instructor_id);
+        }
 
         $sql = (new QueryBuilder)
                     ->from("topics")

@@ -31,7 +31,7 @@ class Filter{
     {
         if(!isset($_SESSION['auth']) && is_null($_SESSION['auth'])){
             if(is_null($root)){
-                Funcs::redirect('login');
+                Funcs::redirect('/account/login');
             }else{
                 Funcs::redirect('/admin/account/login');
             }

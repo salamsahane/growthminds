@@ -25,7 +25,7 @@ use App\Utils\Funcs;
 
             <!-- Navbar Brand -->
             <a href="/" class="navbar-brand">
-                <img class="navbar-brand-icon mr-0 mr-md-8pt" src="/assets/images/logo/white-100%402x.png" width="30"
+                <img class="navbar-brand-icon mr-0 mr-md-8pt" src="/assets/images/logo/logof.png" width="80px" height="80px"
                     alt="<?= WEBSITE_NAME ?>">
                 <span class="d-none d-md-block"><?=WEBSITE_NAME ?></span>
             </a>

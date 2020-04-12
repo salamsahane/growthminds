@@ -43,13 +43,13 @@
         .traffic-chart {
             min-height: 335px;
         }
-        #flotPie1  {
+        #flotPie1, #flotPie2  {
             height: 150px;
         }
-        #flotPie1 td {
+        #flotPie1 td, #flotPie2 td {
             padding:3px;
         }
-        #flotPie1 table {
+        #flotPie1 table, #flotPie2 table {
             top: 20px!important;
             right: -10px!important;
         }

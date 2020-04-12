@@ -14,11 +14,6 @@ use App\Utils\Funcs;
                         <div class="col-md-7">
                             <p class="lead text-white-50 measure-hero-lead text-justify">
                                 <?= $course->course_description ?></p>
-                            <!-- <div class="d-flex flex-column flex-sm-row align-items-center justify-content-start">
-                                <a href="lesson.html" class="btn btn-outline-white mb-16pt mb-sm-0 mr-sm-16pt">Watch trailer <i
-                                        class="material-icons icon--right">play_circle_outline</i></a>
-                                <a href="pricing.html" class="btn btn-white">Start your free trial</a>
-                            </div> -->
                         </div>
                         <div class="col-md-5">
                             <img src="<?= $course->course_image ?>" alt="<?= $course->course_name ?>" class="rounded">
@@ -57,7 +52,7 @@ use App\Utils\Funcs;
         </div>
     </div>
 
-    <?php if(!Funcs::is_logged_in() || $course_assign->person_id != $person->person_id):?>
+    <?php if(!Funcs::is_logged_in() || $person->profil == 'Prospect' || ($person->profil == 'instructor' && $course_assign->person_id != $person->person_id)):?>
         <div class="page-section border-bottom-2">
             <div class="container page__container">
                 <h4>Table of Contents</h4>
@@ -95,7 +90,7 @@ use App\Utils\Funcs;
                             </div>
                             <h4 class="my-8pt"><strong>Unlock All Content</strong></h4>
                             <p class="text-70 mb-24pt">Get access to all Topics in the Course</p>
-                            <a href="pricing.html" class="btn btn-outline-primary mb-8pt">Purchase Course</a>
+                            <a href="/course/purchase/<?= $course->course_id ?>" class="btn btn-outline-primary mb-8pt">Purchase Course</a>
                             <?php if(!Funcs::is_logged_in()): ?>
                             <p>Have an account? <a href="/account/login">Login</a></p>
                             <?php endif ?>

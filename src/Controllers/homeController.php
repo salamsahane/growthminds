@@ -17,4 +17,10 @@ class homeController extends Controller{
         $this->view->render();
     }
 
+    public function aboutus()
+    {
+        $this->view('about', 'About Us');
+        $this->view->render();
+    }
+
 }

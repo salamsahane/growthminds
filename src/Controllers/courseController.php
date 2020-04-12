@@ -28,4 +28,12 @@ class courseController extends Controller{
         $this->view->render();
     }
 
+    public function purchase(?int $course_id = null)
+    {
+        $this->view('purchase-course', 'Purchase Course', [
+            'course_id' => $course_id,
+        ]);
+        $this->view->render();
+    }
+
 }
